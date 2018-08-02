@@ -28,7 +28,7 @@
     mapboxgl.accessToken = 'pk.eyJ1IjoicnNvZmlhYyIsImEiOiJjamZoamV6eGQzZDVqMzNvZmVveXZ3ZGx3In0.nv8b9S9cEcJ26huamAArmg'; // replace this with your access token
     var map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/rsofiac/cjfhl394l2ugp2rqn0qnarl7e' // replace this with your style URL
+      style: 'mapbox://styles/rsofiac/cj542w3nb0vxg2romabmw3css' // replace this with your style URL
     });
     map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
@@ -43,7 +43,7 @@
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+    .setHTML('<h3>' + feature.properties.place_name + '</h3><p>' + feature.properties.alumni + '</p>')
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
 });
