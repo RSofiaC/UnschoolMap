@@ -28,12 +28,13 @@
     mapboxgl.accessToken = 'pk.eyJ1IjoicnNvZmlhYyIsImEiOiJjamZoamV6eGQzZDVqMzNvZmVveXZ3ZGx3In0.nv8b9S9cEcJ26huamAArmg'; // replace this with your access token
     var map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/rsofiac/cjfhl394l2ugp2rqn0qnarl7e' // replace this with your style URL
+      style: 'mapbox://styles/rsofiac/cjflhnoo21pm82rph2nlg03an' // replace this with your style URL
     });
     map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['alumnilocations-jul17'] // replace this with the name of the layer
+    layers: ['alumnitry18'] // replace this with the name of the layer
   });
+  map.getCanvas().style.cursor = 'pointer';
 
   if (!features.length) {
     return;
@@ -43,9 +44,18 @@
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+    .setHTML('<h3>' + feature.properties.state + '</h3><p>' + feature.properties.country + '</h3><p>' + feature.properties.alumni1 + '</h3><p>' + feature.properties.alumni2 + '</p>')
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
+});
+
+map.on('mouseenter', 'alumnitry18', function () {
+   map.getCanvas().style.cursor = 'pointer';
+});
+
+// Change it back to a pointer when it leaves.
+map.on('mouseleave','alumnitry18', function () {
+   map.getCanvas().style.cursor = '';
 });
     </script>
   </body>
