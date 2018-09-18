@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <title>Unschool Alumni map</title>
+    <title>Popup1</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
@@ -28,7 +28,7 @@
     mapboxgl.accessToken = 'pk.eyJ1IjoicnNvZmlhYyIsImEiOiJjamZoamV6eGQzZDVqMzNvZmVveXZ3ZGx3In0.nv8b9S9cEcJ26huamAArmg'; // replace this with your access token
     var map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/rsofiac/cjflhnoo21pm82rph2nlg03an' // replace this with your style URL
+      style: 'mapbox://styles/rsofiac/cjflhnoo21pm82rph2nlg03an' // map is not rendering
     });
     map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
@@ -49,14 +49,14 @@
     .addTo(map);
 });
 
-map.on('mouseenter', 'alumnitry18', function () {
-   map.getCanvas().style.cursor = 'pointer';
-});
-
-// Change it back to a pointer when it leaves.
-map.on('mouseleave','alumnitry18', function () {
-   map.getCanvas().style.cursor = '';
-});
+// map.on('mouseenter', 'alumnitry18', function () {
+//    map.getCanvas().style.cursor = 'pointer';
+// });
+//
+// // Change it back to a pointer when it leaves.
+// map.on('mouseleave','alumnitry18', function () {
+//    map.getCanvas().style.cursor = '';
+// });
     </script>
   </body>
 </html>
