@@ -28,13 +28,9 @@
     mapboxgl.accessToken = 'pk.eyJ1IjoicnNvZmlhYyIsImEiOiJjamZoamV6eGQzZDVqMzNvZmVveXZ3ZGx3In0.nv8b9S9cEcJ26huamAArmg'; // replace this with your access token
     var map = new mapboxgl.Map({
       container: 'map',
-<<<<<<< HEAD:unschoolMap.html
       style: 'mapbox://styles/rsofiac/cjflhnoo21pm82rph2nlg03an', // replace this with your style URL
       //center: [41.893748, -87.661557],
       //zoom: 10.7
-=======
-      style: 'mapbox://styles/rsofiac/cj542w3nb0vxg2romabmw3css' // replace this with your style URL
->>>>>>> fc44b305ccbf7c614bbc96963ef50bb09cc9485d:index.html
     });
     map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
@@ -49,11 +45,8 @@
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
-<<<<<<< HEAD:unschoolMap.html
-    .setHTML('<h3>' + feature.properties.state + '</h3><p>' + feature.properties.country + '</p>')
-=======
-    .setHTML('<h3>' + feature.properties.place_name + '</h3><p>' + feature.properties.alumni + '</p>')
->>>>>>> fc44b305ccbf7c614bbc96963ef50bb09cc9485d:index.html
+.setHTML('<h3>' + feature.properties.state + '</h3><p>' + feature.properties.country + '</h3><p>' + feature.properties.fellowship + '</h3><p>'feature.properties.alumni + '</h3><p>' + feature.properties.alumni2 + '</p>')
+    //.setHTML('<h3>' + feature.properties.state + '</h3><p>' + feature.properties.country + '</p>')
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
 });
